@@ -152,10 +152,12 @@ const main = () => {
 };
 
 const resoudre = () => {
+  document.getElementById("info-sol").innerText = "";
   recup_input();
   if (wrong || !check_grille(sudoku)) {
     document.getElementById("info-sol").innerText =
       "Votre grille est incorrecte !";
+      wrong = false;
   } else {
     afficher_grille(sudoku, 0);
     valide = estValide(sudoku, 0);
